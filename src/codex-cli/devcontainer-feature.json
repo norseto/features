@@ -1,6 +1,6 @@
 {
   "id": "codex-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "name": "Codex CLI",
   "documentationURL": "https://github.com/norseto/features/tree/main/src/codex-cli",
   "description": "Installs the OpenAI Codex CLI tool using Bun. Requires the Bun feature to be installed first.",

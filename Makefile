@@ -30,5 +30,7 @@ all: build publish
 push: all
 
 # Login to GHCR
+GITHUB_TOKEN ?= GITHUB_TOKEN
+USERNAME ?= USERNAME
 login:
 	echo $(GITHUB_TOKEN) | docker login ghcr.io -u $(USERNAME) --password-stdin

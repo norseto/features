@@ -31,9 +31,9 @@ ln -f -s "${BUN_INSTALL}/bin/bunx" "${BUN_INSTALL}/bin/npx"
 
 # Install the specified version of Codex CLI using Bun
 if [ "$VERSION" = "latest" ]; then
-    bun add -g @openai/codex
+    npm install -g @openai/codex
 else
-    bun add -g @openai/codex@"$VERSION"
+    npm install -g @openai/codex@"$VERSION"
 fi
 
 # Verify installation
