@@ -13,17 +13,22 @@ VERSION ?= $(shell jq -r .version src/$(FEATURE)/devcontainer-feature.json)
 BUILD_TAG = $(IMAGE_REPO):$(VERSION)
 LATEST_TAG = $(IMAGE_REPO):latest
 
-.PHONY: build push all
+.PHONY: build push all login
 
-# Build the DevContainer feature image locally
+# Build the DevContainer feature package locally
 build:
-	devcontainer features build --workspace . --features src/$(FEATURE) --output $(BUILD_TAG)
+	devcontainer features package ./src/$(FEATURE) --output-folder ./output
 
-# Push built image and latest tag to GHCR
-push: build
-	docker push $(BUILD_TAG)
-	docker tag $(BUILD_TAG) $(LATEST_TAG)
-	docker push $(LATEST_TAG)
+# Publish feature to GHCR
+publish:
+	devcontainer features publish ./src/$(FEATURE) --namespace norseto/features --target $(BUILD_TAG)
 
 # Build and push in one step
-all: push
+all: build publish
+
+# Alias for backward compatibility
+push: all
+
+# Login to GHCR
+login:
+	echo $(GITHUB_TOKEN) | docker login ghcr.io -u $(USERNAME) --password-stdin
