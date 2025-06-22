@@ -1,6 +1,6 @@
 {
   "id": "codex-cli",
-  "version": "0.1.0",
+  "version": "0.0.9",
   "name": "Codex CLI",
   "documentationURL": "https://github.com/norseto/features/tree/main/src/codex-cli",
   "description": "Installs the OpenAI Codex CLI tool using Bun. Requires the Bun feature to be installed first.",
@@ -15,14 +15,10 @@
       "description": "Version of @openai/codex to install. Use 'latest' for the most recent version."
     }
   },
-  "containerEnv": {
-    "BUN_INSTALL": "${containerEnv:HOME}/.bun",
-    "PATH": "${containerEnv:BUN_INSTALL}/bin:${containerEnv:PATH}"
+  "dependsOn": {
+    "ghcr.io/devcontainers/features/common-utils:1": {},
+    "ghcr.io/audacioustux/devcontainers/bun:1": {}
   },
-  "installsAfter": [
-    "ghcr.io/devcontainers/features/common-utils:1",
-    "ghcr.io/audacioustux/devcontainers/bun:1"
-  ],
   "customizations": {
     "vscode": {
       "settings": {
