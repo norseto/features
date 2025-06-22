@@ -1,0 +1,21 @@
+{
+  "name": "DevContainer Features Development",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/audacioustux/devcontainers/bun:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.makefile-tools",
+        "yzhang.markdown-all-in-one",
+        "redhat.vscode-yaml"
+      ]
+    }
+  },
+  "postCreateCommand": "bun install -g @devcontainers/cli@latest",
+  "remoteUser": "vscode"
+}
