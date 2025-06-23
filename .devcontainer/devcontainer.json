@@ -5,7 +5,7 @@
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/common-utils:2": {},
-    "ghcr.io/michidk/devcontainers-features/bun:1": {},
+    "ghcr.io/audacioustux/devcontainers/bun:1": {},
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
   "customizations": {
@@ -17,6 +17,6 @@
       ]
     }
   },
-  "postCreateCommand": "bun install -g @devcontainers/cli@latest",
+  "postCreateCommand": "./.devcontainer/post-create.sh",
   "remoteUser": "vscode"
 }
