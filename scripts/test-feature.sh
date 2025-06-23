@@ -6,6 +6,8 @@ set -e
 
 FEATURE_DIR="$1"
 FEATURE_NAME=$(basename "${FEATURE_DIR}")
+export _REMOTE_USER=$(id -un)
+export _REMOTE_USER_HOME="${HOME}"
 
 if [ -z "${FEATURE_DIR}" ] || [ ! -d "${FEATURE_DIR}" ]; then
     echo "Usage: $0 <path-to-feature>"

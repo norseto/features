@@ -45,4 +45,4 @@ export OPENAI_API_KEY='your-api-key-here'
 
 ## License
 
-[Specify License]
+See https://github.com/norseto/features/blob/main/LICENSE

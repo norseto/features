@@ -40,4 +40,4 @@ See [src/codex-cli/README.md](src/codex-cli/README.md) for more details.
 
 ## License
 
-[Specify License]
+See https://github.com/norseto/features/blob/main/LICENSE
