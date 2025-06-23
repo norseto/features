@@ -1,11 +1,16 @@
 {
   "id": "claude-code-cli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "name": "Claude Code CLI",
   "documentationURL": "https://github.com/norseto/features/tree/main/src/claude-code-cli",
   "licenseURL": "https://github.com/norseto/features/blob/main/LICENSE",
   "description": "Installs the Anthropic Claude Code CLI tool with Bun.",
   "options": {
+    "remote-user": {
+      "type": "string",
+      "default": "",
+      "description": "Remote user name. [DevPod workaround]"
+    },
     "version": {
       "type": "string",
       "proposals": [

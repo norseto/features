@@ -3,6 +3,15 @@
 
 set -e
 
+if [ -n "${REMOTE_USER:-}" ]; then
+    _REMOTE_USER="${REMOTE_USER}"
+    if [ "${REMOTE_USER}" == "root" ]; then
+        _REMOTE_USER_HOME="/root"
+    else
+        _REMOTE_USER_HOME="/home/${REMOTE_USER}"
+    fi
+fi
+
 VERSION="${VERSION:-latest}"
 BUN_INSTALL="${_REMOTE_USER_HOME}/.bun"
 export PATH="${BUN_INSTALL}/bin:$PATH"

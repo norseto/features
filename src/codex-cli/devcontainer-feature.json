@@ -1,11 +1,16 @@
 {
   "id": "codex-cli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "name": "Codex CLI",
   "documentationURL": "https://github.com/norseto/features/tree/main/src/codex-cli",
   "licenseURL": "https://github.com/norseto/features/blob/main/LICENSE",
   "description": "Installs the OpenAI Codex CLI tool with Bun.",
   "options": {
+    "remote-user": {
+      "type": "string",
+      "default": "",
+      "description": "Remote user name. [DevPod workaround]"
+    },
     "version": {
       "type": "string",
       "proposals": [
