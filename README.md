@@ -12,13 +12,27 @@ Installs the OpenAI Codex CLI tool.
 
 ```json
 "features": {
-    "ghcr.io/norseto/features/codex-cli:1": {
+    "ghcr.io/norseto/features/codex-cli:0": {
         "version": "latest"
     }
 }
 ```
 
 See [src/codex-cli/README.md](src/codex-cli/README.md) for more details.
+
+### Claude Code CLI
+
+Installs the Anthropic Claude Code CLI tool.
+
+```json
+"features": {
+    "ghcr.io/norseto/features/claude-code-cli:0": {
+        "version": "latest"
+    }
+}
+```
+
+See [src/claude-code-cli/README.md](src/claude-code-cli/README.md) for more details.
 
 ## Development Guide
 

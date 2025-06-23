@@ -1,23 +1,23 @@
 {
-  "id": "codex-cli",
+  "id": "claude-code-cli",
   "version": "0.1.0",
-  "name": "Codex CLI",
-  "documentationURL": "https://github.com/norseto/features/tree/main/src/codex-cli",
+  "name": "Claude Code CLI",
+  "documentationURL": "https://github.com/norseto/features/tree/main/src/claude-code-cli",
   "licenseURL": "https://github.com/norseto/features/blob/main/LICENSE",
-  "description": "Installs the OpenAI Codex CLI tool with Bun.",
+  "description": "Installs the Anthropic Claude Code CLI tool with Bun.",
   "options": {
     "version": {
       "type": "string",
       "proposals": [
-        "latest",
-        "0.1.0"
+        "latest"
       ],
       "default": "latest",
-      "description": "Version of @openai/codex to install. Use 'latest' for the most recent version."
+      "description": "Version of @anthropic-ai/claude-code to install. Use 'latest' for the most recent version."
     }
   },
   "installsAfter": [
-    "ghcr.io/devcontainers/features/common-utils"
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/jungaretti/features/ripgrep:1"
   ],
   "customizations": {
     "vscode": {

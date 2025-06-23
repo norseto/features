@@ -11,8 +11,8 @@ sudo -iu $_REMOTE_USER <<EOF
     curl -fsSL https://bun.sh/install | bash
 EOF
 
-# Install Codex CLI
-echo "Installing Codex CLI (version: ${VERSION})..."
+# Install Claude Code
+echo "Installing Claude Code CLI (version: ${VERSION})..."
 ln -f -s "${BUN_INSTALL}/bin/bun" "${BUN_INSTALL}/bin/node"
 ln -f -s "${BUN_INSTALL}/bin/bun" "${BUN_INSTALL}/bin/npm"
 ln -f -s "${BUN_INSTALL}/bin/bunx" "${BUN_INSTALL}/bin/npx"
@@ -23,17 +23,17 @@ chown -h --reference="${BUN_INSTALL}/bin/bunx" "${BUN_INSTALL}/bin/npx"
 
 echo "🐰 Using Bun $(sudo -iu $_REMOTE_USER ${BUN_INSTALL}/bin/bun --version) for installation"
 
-# Install the specified version of Codex CLI using Bun
+# Install the specified version of Claude Code CLI using Bun
 if [ "$VERSION" = "latest" ]; then
-    sudo -iu $_REMOTE_USER ${BUN_INSTALL}/bin/bun install -g @openai/codex
+    sudo -iu $_REMOTE_USER ${BUN_INSTALL}/bin/bun install -g @anthropic-ai/claude-code
 else
-    sudo -iu $_REMOTE_USER ${BUN_INSTALL}/bin/bun install -g @openai/codex@"$VERSION"
+    sudo -iu $_REMOTE_USER ${BUN_INSTALL}/bin/bun install -g @anthropic-ai/claude-code@"$VERSION"
 fi
 
 # Verify installation
-if sudo -iu $_REMOTE_USER command -v ${BUN_INSTALL}/bin/codex &> /dev/null; then
-    echo "✅ Codex CLI installed successfully!"
+if sudo -iu $_REMOTE_USER command -v ${BUN_INSTALL}/bin/claude &> /dev/null; then
+    echo "✅ Claude Code CLI installed successfully!"
 else
-    echo "❌ Failed to install Codex CLI"
+    echo "❌ Claude Code CLI installation failed."
     exit 1
 fi
