@@ -1,6 +1,6 @@
 {
   "id": "claude-code-cli",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "name": "Claude Code CLI",
   "documentationURL": "https://github.com/norseto/features/tree/main/src/claude-code-cli",
   "licenseURL": "https://github.com/norseto/features/blob/main/LICENSE",
@@ -11,6 +11,11 @@
       "default": "",
       "description": "Remote user name. [DevPod workaround]"
     },
+    "install-bun": {
+      "type": "boolean",
+      "default": false,
+      "description": "Boolean option to control whether Bun is installed. [DevPod workaround]"
+    },
     "version": {
       "type": "string",
       "proposals": [
@@ -19,6 +24,9 @@
       "default": "latest",
       "description": "Version of @anthropic-ai/claude-code to install. Use 'latest' for the most recent version."
     }
+  },
+  "dependsOn": {
+    "ghcr.io/audacioustux/devcontainers/bun:1": {}
   },
   "installsAfter": [
     "ghcr.io/devcontainers/features/common-utils",

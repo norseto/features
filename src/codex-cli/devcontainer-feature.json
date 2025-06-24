@@ -1,6 +1,6 @@
 {
   "id": "codex-cli",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "name": "Codex CLI",
   "documentationURL": "https://github.com/norseto/features/tree/main/src/codex-cli",
   "licenseURL": "https://github.com/norseto/features/blob/main/LICENSE",
@@ -10,6 +10,11 @@
       "type": "string",
       "default": "",
       "description": "Remote user name. [DevPod workaround]"
+    },
+    "install-bun": {
+      "type": "boolean",
+      "default": false,
+      "description": "Boolean option to control whether Bun is installed. [DevPod workaround]"
     },
     "version": {
       "type": "string",

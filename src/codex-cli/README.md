@@ -11,6 +11,11 @@ This feature installs the OpenAI Codex CLI tool using [Bun](https://bun.sh/), a 
 | Option | Required | Default | Description |
 |--------|----------|---------|-------------|
 | `version` | No | `latest` | Version of Codex CLI to install |
+| `install-bun` | No | false | Boolean option to control whether Bun is installed. |
+| `remote-user` | No | "" | Remote user name. [DevPod workaround] |
+
+* DevPod workaround: [DevPod](https://github.com/microsoft/devpod) does not support remoteUser option in feature(always vscode user). To work around this, you can use the `remote-user` option to specify the remote user name(eg. root).
+* DevPod workaround: [DevPod](https://github.com/microsoft/devpod) does not support [dependency option in feature](https://github.com/loft-sh/devpod/issues/1073). To work around this, you can set true `install-bun` option to control whether Bun is installed.
 
 ## Usage Example
 

@@ -17,7 +17,7 @@ LATEST_TAG = $(IMAGE_REPO):latest
 
 # Build the DevContainer feature package locally
 build:
-	devcontainer features package ./src/$(FEATURE) --output-folder ./output
+	devcontainer features package ./src/$(FEATURE) -f --output-folder ./output
 
 # Publish feature to GHCR
 publish:

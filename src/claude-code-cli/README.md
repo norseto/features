@@ -11,6 +11,11 @@ This feature installs the Anthropic Claude Code CLI tool using [Bun](https://bun
 | Option   | Required | Default | Description                                      |
 |----------|----------|---------|--------------------------------------------------|
 | `version`| No       | `latest`| Version of Claude Code CLI to install            |
+| `install-bun` | No | false | Boolean option to control whether Bun is installed. |
+| `remote-user` | No | "" | Remote user name. |
+
+* DevPod workaround: [DevPod](https://github.com/microsoft/devpod) does not support remoteUser option (always vscode user). To work around this, you can use the `remote-user` option to specify the remote user name(eg. root).
+* DevPod workaround: [DevPod](https://github.com/microsoft/devpod) does not support [dependency option in feature](https://github.com/loft-sh/devpod/issues/1073). To work around this, you can set true `install-bun` option to control whether Bun is installed.
 
 ## Usage Example
 

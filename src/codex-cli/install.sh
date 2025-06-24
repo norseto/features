@@ -16,9 +16,11 @@ VERSION="${VERSION:-latest}"
 BUN_INSTALL="${_REMOTE_USER_HOME}/.bun"
 export PATH="${BUN_INSTALL}/bin:$PATH"
 
-sudo -iu $_REMOTE_USER <<EOF
+if [ "${INSTALL_BUN:-false}" != "false" ]; then
+    sudo -iu $_REMOTE_USER <<EOF
     curl -fsSL https://bun.sh/install | bash
 EOF
+fi
 
 # Install Codex CLI
 echo "Installing Codex CLI (version: ${VERSION})..."
