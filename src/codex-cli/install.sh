@@ -16,11 +16,21 @@ VERSION="${VERSION:-latest}"
 BUN_INSTALL="${_REMOTE_USER_HOME}/.bun"
 export PATH="${BUN_INSTALL}/bin:$PATH"
 
+# Check if OS is Debian-based
+if [ ! -f /etc/debian_version ]; then
+    echo "Error: This feature is only supported on Debian-based distributions."
+    exit 1
+fi
+
 if [ "${INSTALL_BUN:-false}" != "false" ]; then
     sudo -iu $_REMOTE_USER <<EOF
     curl -fsSL https://bun.sh/install | bash
 EOF
 fi
+
+# Set non-interactive frontend to avoid prompts during package installation
+export DEBIAN_FRONTEND=noninteractive
+apt-get update && apt-get install -y --no-install-recommends xdg-utils && apt-get clean
 
 # Install Codex CLI
 echo "Installing Codex CLI (version: ${VERSION})..."
