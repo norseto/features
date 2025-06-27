@@ -1,6 +1,6 @@
 {
   "id": "gemini-cli",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "name": "Gemini CLI",
   "documentationURL": "https://github.com/norseto/features/tree/main/src/gemini-cli",
   "licenseURL": "https://github.com/norseto/features/blob/main/LICENSE",
