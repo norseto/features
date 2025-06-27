@@ -34,6 +34,20 @@ Installs the Anthropic Claude Code CLI tool.
 
 See [src/claude-code-cli/README.md](src/claude-code-cli/README.md) for more details.
 
+### Gemini CLI
+
+Installs the Google Gemini CLI tool.
+
+```json
+"features": {
+    "ghcr.io/norseto/features/gemini-cli:0": {
+        "version": "latest"
+    }
+}
+```
+
+See [src/gemini-cli/README.md](src/gemini-cli/README.md) for more details.
+
 ## Development Guide
 
 ### Adding a New Feature

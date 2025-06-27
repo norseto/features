@@ -1,0 +1,46 @@
+{
+  "id": "gemini-cli",
+  "version": "0.1.0",
+  "name": "Gemini CLI",
+  "documentationURL": "https://github.com/norseto/features/tree/main/src/gemini-cli",
+  "licenseURL": "https://github.com/norseto/features/blob/main/LICENSE",
+  "description": "Installs the Google Generative AI CLI tool with npm.",
+  "options": {
+    "remote-user": {
+      "type": "string",
+      "default": "",
+      "description": "Remote user name. [DevPod workaround]"
+    },
+    "install-bun": {
+      "type": "boolean",
+      "default": false,
+      "description": "Boolean option to control whether Bun is installed. [DevPod workaround]"
+    },
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "1.0.0"
+      ],
+      "default": "latest",
+      "description": "Version of @google/generative-ai to install. Use 'latest' for the most recent version."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          }
+        }
+      }
+    }
+  },
+  "entrypoint": "/bin/bash"
+}
